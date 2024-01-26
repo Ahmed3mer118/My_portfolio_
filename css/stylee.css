@@ -243,12 +243,18 @@ body{
 .project a{
    text-decoration: none;
 }
-.project .box p {
+.project .box h2 , p {
   display: flex;
   font-size: 25px;
   color: white;
   list-style: none;
 } 
+.project .box  p {
+ line-height: 30px;
+   font-size: 20px;
+   color: #999;
+   list-style: none;
+ } 
 /* end project */
 /* start about*/
 .about{
