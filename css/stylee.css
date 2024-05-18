@@ -17,12 +17,17 @@ body{
    background-color: #1f242d ;
    color: #fff;
 }
+a{
+   color: #b9b9b9;
+}
  /* start header */
  .header {
    width: 100%;
     padding-top: 5px;
     padding-bottom: 5px;
     background-color: #1f242d;
+    position: fixed;
+    z-index: 2000;
    
  }
  .header .container{
@@ -32,19 +37,17 @@ body{
     justify-content: space-between;
     width: 80%;
     margin: auto;
+    padding: 10px;
+    
  }
  .header .logo{
     font-size: 30px;
     font-weight: bold;
     color: var(--main-color-alt);
-    cursor: pointer;
-    margin: 0 40px;
+  
     text-decoration: none;
  }
 
- .header .logo span{
-    color: var(--text-color);
- }
 .header #icon{
    font-size: 30px;
    color: var(--text-color);
@@ -123,6 +126,8 @@ body{
 .home h3{
    font-size: 30px;
    font-weight: 700;
+   animation-name: h3;
+   animation-duration: 2s;
 }
 .home h3:nth-of-type(2){
    margin-bottom: 25px;
@@ -135,17 +140,21 @@ body{
    font-size: 50px;
    font-weight: 700;
    line-height: 1.3;
+   animation-name: h1;
+   animation-duration: 2s;
 }
 .home .links{
    display: flex;
    justify-content: space-between;
    align-items: center;
+   animation-name: links;
+   animation-duration: 2s;
 }
 .home .links a{
    border: 1px solid var(--text-color);
    border-radius: 50%;
    padding: 15px;
-   transition: 0.5s;
+ 
    color: var(--text-color);
    font-size: 20px;
 }
@@ -153,38 +162,61 @@ body{
   
    color: #fff;
    background-color: #0ef;
-}
-.home .btn{
-   display: inline-flex;
-   padding: 10px 30px;
-   color: #1f242d;
-   background: var(--text-color);
-   border-radius: 40px ;
-   box-shadow: 0 0 10px var(--main-color-alt);
-   text-decoration: none;
-   font-size: 15px;
-   font-weight: 700;
    transition: 0.3s;
 }
-.btn:hover{
-   box-shadow: none;
+
+
+.home img{
+   animation-name: image;
+   animation-duration: 2s;
+   /* animation-delay: 0.5s ; */
 }
-.home .btn2{
-   display: inline-flex;
-   padding: 10px 30px;
-   color: #1f242d;
-   background: var(--text-color);
-   border-radius: 40px ;
-   box-shadow: 0 0 10px var(--main-color-alt);
-   text-decoration: none;
-   font-size: 15px;
-   font-weight: 700;
-   cursor: pointer;
-   transition: 0.3s;
+/* start anination */
+@keyframes image{
+   from{
+      position: relative;
+      right: -30px;
+      opacity: 0;
+   }to{
+      position: relative;
+      right: 0;
+      opacity: 1;
+   }
 }
-.btn2:hover{
-   box-shadow: none;
+@keyframes h3{
+   from{
+      position: relative;
+      left: -30px;
+      opacity: 0;
+   }to{
+      position: relative;
+      left: 0;
+      opacity: 1;
+   }
 }
+@keyframes h1{
+   from{
+      position: relative;
+      bottom: -30px;
+      opacity: 0;
+   }to{
+      position: relative;
+      bottom: 0;
+      opacity: 1;
+   }
+}
+@keyframes links{
+   from{
+      position: relative;
+      bottom: -30px;
+      opacity: 0;
+   }to{
+      position: relative;
+      bottom: 0;
+      opacity: 1;
+   }
+}
+/* end anination */
 
 /* end home */
 /* start project */
@@ -226,10 +258,13 @@ body{
    margin: 0 25px;
    padding: 15px;
    box-shadow: 0px 12px 20px black;
+   min-height: 400px;
+
 }
 .project .box:hover{
    top: -5px;
-   transition: 0.5s ease;
+   transition: 0.5s ease-out;
+
 }
 .project .box img{
   width: 100%;
@@ -261,7 +296,7 @@ body{
    padding: 20px;
 }
 .about h3{
-   margin: 10px auto 80px;
+   margin: 10px auto;
    border: 2px solid var(--main-color-alt);
    border-radius: 15px;
    padding: 10px 20px;
@@ -340,31 +375,25 @@ body{
 .skills .container h2:hover::after{
    width: 100%;
 }
-.skills .container .skill h3{
+.skills .skill-icons{
    display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 5px 50px;
+   align-items: center;
+   /* gap: 20px; */
+   flex-wrap: wrap;
+   width: 80%;
+   margin: auto;
 }
-.skills .container p span{
- width: 150px;
- height: 20px;
- background-color: #1787e0;
-} 
-.skills .the-progress{
-   height: 25px;
-   width: 880px;
-   background-color: #eee;
-   position: relative;
-   top: -25px;
-   left: 250px;
+.skills .skill-icons img{ 
+   width: 90px;
+height: 90px;
+border: 1px solid var(--main-color);
+border-radius: 50%;
+padding: 20px;
+margin: 20px;
+transition: 0.5s ;
 }
-.skills .the-progress span{
-   position:absolute;
-   left: 0;
-   top:0;
-   height: 100%;
-   background-color: #1787e0;
+.skills .skill-icons img:hover {
+ transform: scale(1.5);
 }
 @media (max-width: 767px){
    .skills .the-progress{

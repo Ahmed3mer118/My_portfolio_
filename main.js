@@ -52,6 +52,15 @@ let projects=[
         link: "https://ahmed3mer118.github.io/QuizApp/",
         discription:"A simple project for Quiz App"
     },
+    {
+      
+        id:7,
+        name:"QR code ",
+        image:"qrcode.jpg",
+        link: "https://ahmed3mer118.github.io/QR-code/",
+        discription:"A simple project for QR CODE can you create any QR and scan "
+    
+    }
   
 
 ]
